@@ -1,114 +1,90 @@
-# Make your own Codewars Style Challenge
+![App Screenshot](SarcasticScoresBannerBanner.png)
 
-In this workshop, you'll create your own programming challenge for others to solve, similar to the ones you might have tackled on Codewars. You'll write unit tests to validate solutions. Then you can share your challenge with other bootcampers for them to solve. If a submitted solution passes all your tests, it will be considered a correct solution - just like on Codewars. This is a great chance to get creative and come up with a programming challenge to stump your peers!
+<center>
+<h1>Sarcastic Scores: Turning every score into a snarky masterpiece. 🎭</h1>
+</center>
 
-## 💡 OBJECTIVES FOR THE WORKSHOP
+## Welcome, "dear" developer!
 
-Here's a glimpse of what you'll be achieving by the end of this workshop:
+You're about to embark on a journey to create the most sarcastic scoring function ever. Before you dive in, please ***right-click*** on this `README.md` and choose ***Preview*** mode for a better reading experience.
 
-- Clearly describing a problem/task that you want others to solve
-- Writing unit tests to check whether their solution to your task is correct
-- Present your project plan, story, and anything else you feel supports your creation process and final outcome in a document
 
-## 🎟️ TICKETS
+## 🤔 What's This All About?
 
-Time to dive into action! 🏊‍♂️ Here's what you'll be working on:
+You're tasked with creating a function that translates boring numerical scores (from 0 to 100) into delightfully sarcastic phrases. Why be straightforward when you can be snarky?
 
-### 🎫 Ticket 1 - Setup
+### 🌟 Objective
 
-Install Vitest and optionally set up an NPM `test` script that conveniently runs your tests.
+Create a function that accepts a score and returns a sarcastic string based on the input. Be prepared to handle all cases, including if the user inputs a word, a negative number, or, heaven forbid, nothing at all.
 
-You will be making one kata each, but you will be in development teams. The aim is to co-elevate each other. There are several ways you can and should look to help each other:
+---
 
-- Brainstorming: Helping each make your ideas better, and giving feedback to each other to add different perspectives and improve the end product
-- Planning: You can help validate each others plans, and sense check in a team review the direction of your products
-- Check-ins: Regular team stand-ups / check-ins will help make sure you are building and making progress together
-- Support: You should aim to help each other overcome issues if one of your team is stuck and cannot Google their way out of it
-- Testing: You can act as a first line user test for each others katas. You might find it a good idea to book in regular checkpoints to demo to each other and get initial feedback in quick bursts, making sure you can build in and adapt to any useful feedback before official release of your katas
+# Project Description
 
-### 🎫 Ticket 2 - Plan your kata
+In this project, you will use only these two well-known software tools:
 
-Attack this as you would any other problem - plan, plan, plan and use our agile approach to create steps that allow you to build MVPs and incrementally reach your stretch goals. Brainstorm options with a technique like Disney Ideation. Once you have a compelling challenge and story idea, start breaking it down. Think about the goals of your challenge, and the scenarios you could provide to test if people have reached those goals. Provide any examples or additional details that are necessary for someone taking on your kata to understand the problem, but don't give away so much that it removes the challenge. You want to strike a balance - not too vague but not spoon-feeding the solution either.
+![JavaScript](https://shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000&style=flat-square)<br>![Vitest](https://img.shields.io/badge/vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
 
-Write your kata's scenario in a comment in `main.js` and include the start of an exported function that your audience will use to solve it (like you've seen on the katas you've done before). If it's useful to see an example:
+---
+## 🚀 Getting Started
 
-```js
-/**
- * Hello challenger! Your task is to write a function named `transformLength` which takes in a string and returns 1 if the length of the string is even and otherwise -1.
- *
- * Your implementation should handle strings whose length is between 0 (inclusive) and 2500 (inclusive).
- *
- * A few examples:
- *    `transformLength("table")` should return -1 as the length of "table" is not even
- *    `transformLength("wizard")` should return 1 as the length of "wizard" is even
- */
-export function transformLength(string) {
-  // Good luck!
-}
+First things first, you need to install the necessary dependencies. Fire up your terminal and run the following command:
+
+```bash
+npm install
 ```
 
-ℹ️ The reason for leaving the function body empty is that you want the people solving your kata to write their own implementation from scratch. Your role is to provide the overall problem statement and function skeleton. The solving and coding is up to them! Leaving an incomplete skeleton function helps point them in the right direction without giving away a full working solution.
+Now that you've done the hard part, let's get to the fun stuff.
 
-### 🎫 Ticket 3 - Write your kata
+---
 
-When drafting your test cases, consider the different inputs that could be passed to the solution function and any edge cases you want to account for. You could put into practice tools such as Equivalency Partitioning, Boundary Value Analysis, and Decision Tables if its useful. Think of test values that will thoroughly cover the expected functionality. The number of tests is up to you, but aim for sufficient coverage to validate correctness.
+## 📜 How to Translate Scores to Sarcasm
 
-Since you'll write tests before seeing people's solutions, focus on defining expected outputs for given inputs, without assumptions about how people actually wrote the code. You're testing for outcomes. You could follow a TDD workflow - write a failing test, then temporarily add code to pass it. Just be sure to remove the solution code before sharing the kata. This helps ensure your tests fail when logic is missing or incorrect and pass when implemented properly.
+Here's a breakdown of the score ranges and their corresponding sarcastic responses:
 
-If it's useful to see an example (continuing the `checkLength` example from earlier):
+- **String input:** "Letters? This isn't Wordle!"
+- **NaN input:** "Not a number. Is this modern art?"
+- **Negative score:** "Negative score? Did you even try?"
+- **Score = 0:** "Zero? Didn't write your name?"
+- **Score between 1 and 19:** "At least you tried... sort of."
+- **Score between 20 and 49:** "Almost there... if you're aiming low."
+- **Score between 50 and 69:** "Mediocre, just mediocre."
+- **Score between 70 and 99:** "Great job! For a robot."
+- **Score = 100:** "100? Do you have a life?"
+- **Score greater than 100:** "Overachiever much?"
+- **Undefined, null, or object input:** "That doesn't even make sense!"
 
-```js
-import { test, expect } from "vitest";
-import { checkLength } from "./main.js";
+---
 
-test("should return -1 for strings with an odd length", () => {
-  const expected = -1;
-  const actual = checkLength("table");
-  expect(actual).toBe(expected);
-});
+## 📝 Instructions
 
-test("should return 1 for strings with an even length", () => {
-  const expected = 1;
-  const actual = checkLength("wizard");
-  expect(actual).toBe(expected);
-});
+1. Open **main.js** and locate the `SarcasticScoreToString` function.
+2. Implement the function so it returns the appropriate sarcastic string for each score range.
+3. Don't forget to consider edge cases—people can be creative with their inputs!
+
+---
+
+## 🚨 Running the Tests
+
+Once you think your function is as sarcastic as it can be, run the tests to make sure everything works perfectly:
+
+```bash
+npm run test
 ```
 
-🎯 At this stage you should have a description of the problem in `main.js` and some tests in `main.test.js`.
+You should see a beautiful sea of green if you've done everything correctly.
 
-### 🎫 Ticket 4 - Check your tests
+---
 
-To verify your tests, temporarily add a working implementation to the solution function in `main.js`. Check that the tests fail before implementation and pass when the function is coded correctly. This validates that your tests accurately check for both incorrect and correct solutions. Remember to remove the solution code afterwards before sharing the kata.
+## 🗣️ Feedback
 
-If it's useful to see an example (continuing the `checkLength` example from earlier):
+I'd love to hear your opinion on this project! If you have any feedback or just want to share your sarcastic creations, please reach out to me on Slack. Your input is invaluable and always welcome! 😊
 
-```js
-export function checkLength(string) {
-  // Temporarily added the line below to check if tests pass, but will remove it before committing and pushing.
-  return string.length % 2 === 0 ? 1 : -1;
-}
-```
 
-### 🎫 Ticket 5 - Share your kata
+<br><br><br>
 
-Before pushing your final kata repository, be sure to remove any solution code you added for test validation. You want to provide only the kata description, skeleton function, and test cases - no actual solutions. Once ready, share your repo link in the [learn.schoolofcode.co.uk Hackathon Channel](https://learn.schoolofcode.co.uk/path-player?courseid=bc17-qe&unit=66acf966524bf23f05018063Unit) so other bootcampers can find it, clone it, implement solutions, and run your tests to check their progress. This allows them to solve the programming challenge you've created!
+## ⚠️ My Planning ##
 
-Share it with following format:
-
-```
-Room: REPLACE_ME_WITH_YOUR_ROOM_NUMBER
-Name: REPLACE_ME_WITH_YOUR_NAME
-Link: REPLACE_ME_WITH_A_LINK_TO_YOUR_PUBLIC_GITHUB_REPO_CONTAINING_THE_KATA
-Overview: REPLACE_ME_WITH_A_BRIEF_DESCRIPTION_OF_WHAT_YOUR_KATA_IS_ABOUT
-```
-
-If it's not public already, remember to change the visibility of your repository to public.
-
-### 🎫 Ticket 6 - Present you kata
-
-Make sure you present your project in the markdown file - this will be assessed alongside your actual kata. Treat this as an asynchronous presentation - anything you would want to talk through (plans, brainstorming, final results, user feedback, etc) should go in here.
-
-### 🎫 Ticket 7 - Complete katas from others
-
-To solve katas created by other bootcampers, first clone their repository using the shared link. `cd` into the folder, run `npm install` to get the dependencies, then implement a solution in main.js. Execute their test cases to validate your code against their requirements. Provide feedback on the clarity of their instructions, difficulty level, and effectiveness of the tests. Engaging with each other's challenges allows everyone to learn. Make sure to critique respectfully - creating a programming challenge is difficult!
-
+| Time       | Note                                                                                       |
+|------------|--------------------------------------------------------------------------------------------|
+| 00:51 AM   | I'm finishing this at 00:51 AM. Clearly, I can't offer you anything useful on organization 🤷‍♂️ However, if you’re still interested in seeing how I’ve structured things, [here is a detailed breakdown of the project organization](organization.md). |
