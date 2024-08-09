@@ -1,4 +1,4 @@
-![App Screenshot](SarcasticScoresBannerBanner.png)
+![App Screenshot](SarcasticScoresBanner.png)
 
 <center>
 <h1>Sarcastic Scores: Turning every score into a snarky masterpiece. 🎭</h1>
